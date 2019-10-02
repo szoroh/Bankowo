@@ -15,6 +15,10 @@ class BankAccountsController < ApplicationController
     end
   end
 
+  def index
+    @bank_accounts = BankAccount.all
+  end
+
   private
 
   def bank_account_params

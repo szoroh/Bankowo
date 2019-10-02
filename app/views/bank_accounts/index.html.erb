@@ -1,0 +1,16 @@
+Dear, <%= current_user.name %>, your account:
+<br>
+<table>
+  <tr>
+    <th>Iban</th>
+    <th>Currency</th>
+    <th>Balance</th>
+  </tr>
+  <tr>
+    <% @bank_accounts.each do |account| %>
+      <td><%= account.iban %></td>
+      <td><%= account.currency %></td>
+      <td><%= account.balance %></td>
+    <% end %>
+  </tr>
+</table>
