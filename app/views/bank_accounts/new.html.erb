@@ -1,0 +1,12 @@
+<%= form_with model: @bank_account do |bank_account| %>
+  <%= bank_account.label :iban%>
+  <%= bank_account.text_field :iban %><br />
+
+  <%= bank_account.label :currency %>
+  <%= bank_account.text_field :currency %><br />
+
+  <% bank_account.label :balane %>
+  <% bank_account.text_field :balance %><br />
+
+  <%= bank_account.submit %>
+<% end %>
