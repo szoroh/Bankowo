@@ -5,12 +5,14 @@ Dear, <%= current_user.name %>, your account:
     <th>Iban</th>
     <th>Currency</th>
     <th>Balance</th>
+    <th>Show</th>
   </tr>
   <tr>
     <% @bank_accounts.each do |account| %>
       <td><%= account.iban %></td>
       <td><%= account.currency %></td>
       <td><%= account.balance %></td>
+      <td><%= link_to 'Show', bank_account_path(account) %></td>
     <% end %>
   </tr>
 </table>

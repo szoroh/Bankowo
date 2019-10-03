@@ -19,6 +19,10 @@ class BankAccountsController < ApplicationController
     @bank_accounts = BankAccount.all
   end
 
+  def show
+    @bank_account = BankAccount.find(params[:id])
+  end
+
   private
 
   def bank_account_params
