@@ -16,14 +16,12 @@ ActiveRecord::Schema.define(version: 2019_10_08_202821) do
   enable_extension "plpgsql"
 
   create_table "bank_accounts", force: :cascade do |t|
-    t.integer "bank_accounts_id"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "iban", null: false
     t.string "currency", null: false
     t.decimal "balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["bank_accounts_id"], name: "index_bank_accounts_on_bank_accounts_id"
     t.index ["user_id"], name: "index_bank_accounts_on_user_id"
   end
 
@@ -55,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_10_08_202821) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bank_accounts", "bank_accounts", column: "bank_accounts_id"
   add_foreign_key "bank_accounts", "users"
   add_foreign_key "money_transfers", "bank_accounts"
 end

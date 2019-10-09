@@ -1,7 +1,7 @@
 class CreateBankAccount < ActiveRecord::Migration[6.0]
   def change
     create_table :bank_accounts do |t|
-      t.references :bank_accounts, :user, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.string  :iban, null: false
       t.string  :currency, null: false
