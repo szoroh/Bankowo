@@ -1,0 +1,15 @@
+Transfer:
+<%= form_with model: @money_transfer do |t| %>
+
+<%= t.label :iban %>
+<%= t.text_field :iban%>
+
+<%= t.label :amount %>
+<%= t.text_field :amount %>
+
+<%= t.label :currency %>
+<%= t.text_field :currency %>
+
+<%= t.submit %>
+
+<% end %>
